@@ -4113,7 +4113,52 @@ table.wp-calendar-table caption {
   width: 100%;
   background: linear-gradient(270.01deg, #FF8E49 0.01%, #FE7724 46.92%, #FD6000 99.99%);
   max-width: none;
-  padding: 25px 0;
+  padding: 28px 0 10px 0;
+}
+
+.mastnavBar {
+    width: 100%;
+    background: #fff;
+	margin: 0;
+	box-shadow: 0px 2px 4px #E5E5E5;
+}
+
+
+.searchBar input[type='text'] {
+	background: #ffffff00;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 296px;
+    height: 48px;
+}
+
+.searchBar input[type='text']:focus {
+	border: none;
+	outline: none;
+	outline-offset: none;
+}
+
+.searchBar input {
+    color: #949596;
+    display: block;
+    font-size: 14px;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    height: 48px;
+}
+
+.searchBar svg{
+	margin-left: 42px;
 }
 
 .modal__filter {

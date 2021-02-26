@@ -609,6 +609,19 @@ function twentytwentyone_add_ie_class() {
 }
 add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
 
+function changeFilterPost() {
+	
+	$args = array(
+		'category__or' => [], // Posts que contenham as seguintes categorias (por id)
+		'tag__in' => [], // Posts que contenham as seguintes tags (por id)
+		'posts_per_page' => -1, // Mostra posts ilimitados
+		'post_status' => 'publish',
+		's' => 'hello' // Termo de busca
+	);
+	
+	$posts = get_posts($args);
+}
+
 
 function wpb_hook_javascript() {
     ?>

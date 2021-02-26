@@ -16,6 +16,7 @@
 
 get_header();
 
+$filteresCategories;
 ?>
 
 <div class="modal__filter">
@@ -37,7 +38,7 @@ get_header();
 					$categories = get_categories();
 					foreach ($categories as $category) {
 						echo '<div class="filter__item"> 
-						<input type="checkbox" name="'.$category->term_id.'" onChange="console.log(`'.$category->term_id.'`)"/>
+						<input type="checkbox" name="'.$category->term_id.'" onChange="'.changeFilterPost().'")"/>
 						<label for="'.$category->term_id.'">'.$category->name.'</label>
 						</div>';
 					}

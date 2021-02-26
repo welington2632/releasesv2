@@ -610,3 +610,30 @@ function twentytwentyone_add_ie_class() {
 add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
 
 
+function wpb_hook_javascript() {
+    ?>
+		<script type="text/javascript"> 
+				
+			function toggleFilterBox() {
+				var filterBoxContent = document.getElementsByClassName("modal__content")[0];
+				var button = document.getElementsByClassName("modal__toggle")[0];
+				var width = document.getElementsByClassName("modal__filter")[0].style.width;
+				
+				if(width == '0px' || width == '0' || width == ''){
+					document.getElementsByClassName("modal__filter")[0].style.width = '45%';		
+          			filterBoxContent.classList.remove("hide");
+          			button.classList.remove("open");
+          			button.classList.add("close");
+					button.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.41L1.41 0L7 5.59L12.59 0L14 1.41L8.41 7L14 12.59L12.59 14L7 8.41L1.41 14L0 12.59L5.59 7L0 1.41Z" fill="#FFF8F8"/></svg>'
+				} else {
+					document.getElementsByClassName("modal__filter")[0].style.width = '0';		
+          			filterBoxContent.classList.add("hide");
+          			button.classList.remove("close");
+          			button.classList.add("open");
+					button.innerHTML = '<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V2H18V0H0ZM7 12H11V10H7V12ZM15 7H3V5H15V7Z" fill="white"/></svg>'
+				}
+			}
+		</script>
+    <?php
+}
+add_action('wp_head', 'wpb_hook_javascript');

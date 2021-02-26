@@ -19,42 +19,48 @@ get_header();
 ?>
 
 <div class="modal__filter">
-	<div class="modal__toggle">
-	<svg width="14" class="modal__filter-close" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-	<path d="M0 1.41L1.41 0L7 5.59L12.59 0L14 1.41L8.41 7L14 12.59L12.59 14L7 8.41L1.41 14L0 12.59L5.59 7L0 1.41Z" fill="#FFF8F8"/>
-	</svg>
+	<div class="modal__toggle open" onclick="toggleFilterBox()">
+<!-- 		<svg width="14" class="modal__filter-close" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M0 1.41L1.41 0L7 5.59L12.59 0L14 1.41L8.41 7L14 12.59L12.59 14L7 8.41L1.41 14L0 12.59L5.59 7L0 1.41Z" fill="#FFF8F8"/>
+		</svg> -->
+		<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V2H18V0H0ZM7 12H11V10H7V12ZM15 7H3V5H15V7Z" fill="white"/>
+		</svg>
+
 	</div>
-	<h4 class="modal__title"> Filtros avançados</h4>
-	<section class="filter__section" id="category">
-	<h4 class="filter__section-title">Categorias</h4>
-		<div class="filter__itens">
-			<?php
-				$categories = get_categories();
-				foreach ($categories as $category) {
-					echo '<div class="filter__item"> 
-					<input type="checkbox" name="'.$category->term_id.'" onChange="console.log(`'.$category->term_id.'`)"/>
-					<label for="'.$category->term_id.'">'.$category->name.'</label>
-					</div>';
-				}
-			?>
-		</div>
-	</section>
-	<section class="filter__section" id="products">
-	<h4 class="filter__section-title">Aplicativos</h4>
-		<div class="filter__itens">
-			<?php
-				$tags = get_tags(array(
-					'hide_empty' => false
-				));
-				foreach ($tags as $tag) {
-					echo '<div class="filter__item"> 
-					<input type="checkbox" name="'.$tag->term_id.'" onChange="console.log(`'.$tag->term_id.'`)"/>
-					<label for="'.$tag->term_id.'">'.$tag->name.'</label>
-					</div>';
-				}
-			?>
-		</div>
-	</section>
+	<div class="modal__content hide">
+		<h4 class="modal__title"> Filtros avançados</h4>
+		<section class="filter__section" id="category">
+		<h4 class="filter__section-title">Categorias</h4>
+			<div class="filter__itens">
+				<?php
+					$categories = get_categories();
+					foreach ($categories as $category) {
+						echo '<div class="filter__item"> 
+						<input type="checkbox" name="'.$category->term_id.'" onChange="console.log(`'.$category->term_id.'`)"/>
+						<label for="'.$category->term_id.'">'.$category->name.'</label>
+						</div>';
+					}
+				?>
+			</div>
+		</section>
+		<section class="filter__section" id="products">
+		<h4 class="filter__section-title">Aplicativos</h4>
+			<div class="filter__itens">
+				<?php
+					$tags = get_tags(array(
+						'hide_empty' => false
+					));
+					foreach ($tags as $tag) {
+						echo '<div class="filter__item"> 
+						<input type="checkbox" name="'.$tag->term_id.'" onChange="console.log(`'.$tag->term_id.'`)"/>
+						<label for="'.$tag->term_id.'">'.$tag->name.'</label>
+						</div>';
+					}
+				?>
+			</div>
+		</section>		
+	</div>
 </div>
 
 <?php

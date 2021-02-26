@@ -18,6 +18,16 @@ get_header();
 
 ?>
 
+<div class="mastnavBar">	
+	<div class="searchBar">
+		<svg width="14" height="14" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M1.64407 6.98275C0.946624 3.77751 3.68352 0.971114 6.81011 1.68628C8.38533 2.04691 9.65729 3.35117 10.0097 4.96716C10.7087 8.17316 7.9688 10.9819 4.84295 10.2644C3.26698 9.903 1.99578 8.59874 1.64407 6.98275ZM13.3789 14.8618L9.9319 10.2125C11.2404 8.8792 11.9378 6.91633 11.5459 4.80828C11.11 2.46032 9.26575 0.564679 6.9752 0.113119C2.87694 -0.693731 -0.669172 2.93709 0.107261 7.1379C0.524539 9.39265 2.23537 11.2402 4.41192 11.7765C5.98714 12.1654 7.48413 11.8812 8.70913 11.163L12.1569 15.8146C12.3104 16.0209 12.598 16.0614 12.7999 15.904L13.291 15.5212C13.4929 15.3638 13.5324 15.0689 13.3789 14.8618Z" fill="#858585"></path>
+		</svg>
+
+		<input type="text" name="ofsearch" placeholder="Pesquisar" value="">
+	</div>
+</div>
+
 <div class="modal__filter">
 	<div class="modal__toggle open" onclick="toggleFilterBox()">
 <!-- 		<svg width="14" class="modal__filter-close" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">

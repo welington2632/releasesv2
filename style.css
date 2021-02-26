@@ -4120,14 +4120,31 @@ table.wp-calendar-table caption {
   position: fixed;
   top: 0;
   left: 0;
-  width: 45%;
+  width: 0%;
   height: 100vh;
   background: white;
   box-shadow: 2px 0 3px rgb(0,0,0,0.1);
   margin-top: 200px;
   z-index: 10;
+  transition: width 1s ease-in-out;
+}
+
+.modal__content {
   padding: 15px 50px;
 }
+
+.modal__content {
+    opacity: 1;
+    transition: opacity .3s linear;
+	transition-delay: .7s;
+}
+
+.modal__content.hide {
+    opacity: 0;
+    pointer-events: none;
+	transition-delay: .1s;
+}
+
 
 .modal__title {
     font-size: var(--global--font-size-main-title);
@@ -4167,6 +4184,15 @@ table.wp-calendar-table caption {
   border-radius: 0 5px 5px 0;
   box-shadow: 2px 0 10px rgba(0,0,0,.1);
   z-index: 1;
+  transition: 1s ease-in-out;
+}
+
+.close {
+  background: #555;
+}
+
+.open {
+  background: #fb6d34;
 }
 
 .filter__section {

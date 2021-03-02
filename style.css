@@ -954,7 +954,7 @@ template {
   margin-top: var(--global--spacing-vertical);
   margin-right: auto;
   margin-bottom: var(--global--spacing-vertical);
-  margin-left: auto;
+  margin-left: 0;
 }
 
 /*
@@ -1036,6 +1036,8 @@ template {
 .comment-content > *:last-child,
 .widget > *:last-child {
   margin-bottom: 0;
+  margin-left: 0;
+  color: var(--global--color-primary-orange);
 }
 
 /*
@@ -4207,6 +4209,7 @@ table.wp-calendar-table caption {
 .filter__itens {
   display: flex;
   margin-top: 8px;
+  flex-wrap: wrap;
 }
 
 .filter__item {

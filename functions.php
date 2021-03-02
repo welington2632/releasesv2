@@ -1,4 +1,6 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <?php
+
 /**
  * Functions and definitions
  *
@@ -393,6 +395,19 @@ add_action( 'after_setup_theme', 'twenty_twenty_one_content_width', 0 );
  *
  * @return void
  */
+
+function filtrar() {
+	wp_enqueue_script(
+		'meu_filtro',
+		get_theme_file_uri() . '/assets/js/filtro.js',
+		array('jquery'),
+		'1.0.0',
+		true
+	);
+}
+
+add_action( 'wp_enqueue_scripts', 'filtrar' );
+
 function twenty_twenty_one_scripts() {
 	// Note, the is_IE global variable is defined by WordPress and is used
 	// to detect if the current browser is internet explorer.
@@ -415,6 +430,7 @@ function twenty_twenty_one_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 
 	wp_register_script(
 		'twenty-twenty-one-ie11-polyfills',
@@ -459,6 +475,7 @@ function twentytwentyone_block_editor_script() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'twentytwentyone_block_editor_script' );
+
 
 /**
  * Fix skip link focus in IE11.
@@ -608,7 +625,9 @@ function twentytwentyone_add_ie_class() {
 	<?php
 }
 add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
+?>
 
+<?php
 
 function wpb_hook_javascript() {
     ?>

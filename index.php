@@ -44,10 +44,9 @@ get_header();
 		<h4 class="filter__section-title">Categorias</h4>
 			<div class="filter__itens">
 				<?php
-					$categories = get_categories();
-					foreach ($categories as $category) {
+					foreach (get_categories() as $category) {
 						echo '<div class="filter__item"> 
-						<input type="checkbox" name="'.$category->term_id.'" onChange="console.log(`'.$category->term_id.'`)"/>
+						<input type="checkbox" name="'.$category->term_id.'" onChange="checkCategoryFilter(this)"/>
 						<label for="'.$category->term_id.'">'.$category->name.'</label>
 						</div>';
 					}
@@ -63,7 +62,7 @@ get_header();
 					));
 					foreach ($tags as $tag) {
 						echo '<div class="filter__item"> 
-						<input type="checkbox" name="'.$tag->term_id.'" onChange="console.log(`'.$tag->term_id.'`)"/>
+						<input type="checkbox" name="'.$tag->term_id.'" onChange="checkTagFilter(this)"/>
 						<label for="'.$tag->term_id.'">'.$tag->name.'</label>
 						</div>';
 					}
@@ -78,7 +77,7 @@ get_header();
 global $wp_query;
 
 $args = array(
-	'category__or' => [], // Posts que contenham as seguintes categorias (por id)
+	'category__or' => ['7'], // Posts que contenham as seguintes categorias (por id)
 	'tag__in' => [], // Posts que contenham as seguintes tags (por id)
 	'posts_per_page' => -1, // Mostra posts ilimitados
 	'post_status' => 'publish',

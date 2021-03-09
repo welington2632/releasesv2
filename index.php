@@ -40,16 +40,46 @@ get_header();
 	</div>
 	<div class="modal__content hide">
 		<h4 class="modal__title"> Filtros avançados</h4>
+		<section class="filter__section" id="data">
+		<h4 class="filter__section-title">Data</h4>
+			<div class="filter__itens">
+			<div class="select__date">
+				<select name="data_year">
+					<option selected disabled> Ano </option>
+					<option value="2020"> 2020 </option>
+				</select>
+			</div>
+
+			<div class="select__date">
+				<select name="data_month">
+					<option selected disabled> Mês </option>
+					<option value="01">Janeiro</option>
+					<option value="02">Fevereiro</option>
+					<option value="03">Março</option>
+					<option value="04">Abril</option>
+					<option value="05">Maio</option>
+					<option value="06">Junho</option>
+					<option value="07">Julho</option>
+					<option value="08">Agosto</option>
+					<option value="09">Setembro</option>
+					<option value="10">Outubro</option>
+					<option value="11">Novembro</option>
+					<option value="12">Dezembro</option>
+				</select>
+			</div>
+			</div>
+		</section>
 		<section class="filter__section" id="category">
 		<h4 class="filter__section-title">Categorias</h4>
 			<div class="filter__itens">
 				<?php
-					foreach (get_categories() as $category) {
-						echo '<div class="filter__item"> 
+					foreach (get_categories() as $category): ?>
+						<div class="filter__item"> 
 						<input type="checkbox" name="'.$category->term_id.'" onChange="checkCategoryFilter(this)"/>
-						<label for="'.$category->term_id.'">'.$category->name.'</label>
+						<label for="'.$category->term_id.'"><?=$category->term_name?></label>
 						</div>';
-					}
+				<?php
+					endforeach;
 				?>
 			</div>
 		</section>

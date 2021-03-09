@@ -4169,7 +4169,7 @@ table.wp-calendar-table caption {
   left: 0;
   width: 0%;
   height: 100vh;
-  background: white;
+  background: #EDEDED;
   box-shadow: 2px 0 3px rgb(0,0,0,0.1);
   margin-top: 200px;
   z-index: 10;
@@ -4204,6 +4204,24 @@ table.wp-calendar-table caption {
   font-size: var(--global--font-size-main-title);
   font-weight: normal;
 
+}
+
+.filter__section#data .select__date {
+  width: 40%;
+  
+}
+
+.filter__section#data .filter__itens > .select__date {
+  margin-right: 10%;
+}
+
+.select__date select {
+  width: 100%;
+  border: none;
+  background: white;
+  border-radius: 4px;
+  color: #949596;
+  font-size: var(--global--font-size-xs);
 }
 
 .filter__itens {
@@ -4252,7 +4270,7 @@ table.wp-calendar-table caption {
   justify-content: center;
   align-items: center;
   width: 90%;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 article.post {
@@ -4276,6 +4294,11 @@ div.post__content {
   color: var(--global--color-secondary-gray);
 }
 
+div.post__content h2 {
+  font-size: var(--global--font-size-lg);
+  margin-top: 15px;
+}
+
 div.post__content > * {
   margin-bottom: 15px;
 }
@@ -4291,6 +4314,7 @@ div.post__date {
     display: flex;
     align-items: center;
     font-weight: bold;
+    margin: 0;
 }
 
 div.post__date svg {
@@ -4596,7 +4620,7 @@ a.custom-logo-link {
   width: 100%;
   border-bottom: none;
   padding-bottom: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .singular .has-post-thumbnail .entry-header {
